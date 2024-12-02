@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --first-color: #FFD700;
+    --second-color: #000080;
+    --border-color: #00AA00;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    background-color: black;
+    height: 100%;
+}
+
+body {
+    padding: 30px 150px;
+ 
+
+    div.choice {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 95px;
+        align-items: center;
+
+        div.top {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+
+            div.option {
+                padding: 10px;
+                width: 50%;
+                height: 100%;
+            }
+        }
+
+        div.bottom {
+            flex: 0 0 auto;
+
+            div.input {
+                width: 100%;
+                border: 1px solid transparent;
+                color: rgba(0, 0, 128, 0);
+                padding: 10px;
+            
+                span {
+                    font-weight: bold;
+                    font-size: 16px;
+                }
+            }
+                div.show {
+                    animation: infoDivShow 2s ease-out 0ms infinite alternate;
+
+                    span {
+                        animation: infoSpanShow 2s ease-out 0ms infinite alternate;
+
+                        em {
+                            animation: infoEmShow 2s ease-out 0ms infinite alternate;
+                        }
+                    }
+                }
+            }
+
+        div svg {
+            stroke: transparent;
+            stroke-width: 1.2px;
+            border-bottom: 3px solid transparent;
+        }
+
+        div svg.hover {
+            animation: starHover 2s ease-in 0ms infinite alternate;
+        }
+
+        div svg.active {
+            animation: starActive 2s linear 0ms infinite normal;
+        }
+    }
+
+    h1 {
+        color: var(--second-color);
+        text-align: center;
+        font-size: 42px;
+        letter-spacing: 7px;
+        -webkit-text-stroke: 0.5px var(--first-color);
+    }
+
+    h4 {
+        color: var(--first-color);
+        text-align: center;
+        margin-top: 1.5%;
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+
+    section.coefficients {
+        margin-top: 5%;
+        width: 100%;
+        height: 500px;
+        display: flex;
+
+        div.coefficient {
+            margin: 0 20px;
+            width: 1fr;
+            height: 100%;
+            flex-grow: 1;
+
+            h2 {
+                color: var(--first-color);
+                text-align: center;
+            }
+
+            div.descript {
+                padding: 15px;
+                margin-top: 15px;
+                width: 100%;
+                height: 80%;
+                border: 2px solid var(--border-color);
+                border-radius: 30px;
+
+                h2 {
+                    border-bottom: 1.5px solid var(--border-color);
+                }
+
+                label {
+                    color: var(--second-color);
+                    text-align: center;
+                    margin-top: 15px;
+                    font-weight: bold;
+                    font-size: 24px;
+                    display: block;
+                    cursor: pointer;
+                }
+
+                input {
+                    font-size: 30px;
+                    width: 50%;
+                    height: 40%;
+                    display: block;
+                    margin: 0 auto;
+                    background-color: black;
+                    color: white;
+                    padding: 50px;
+                    border: 2px solid var(--border-color);
+                    border-radius: 30px;
+                    transition: all 1s linear .2s;
+                }
+
+                input:hover,
+                input:active,
+                input:focus {
+                    cursor: pointer;
+                    outline: none;
+                    border-color: red;
+                    box-shadow: 5px 5px 10px var(--second-color);
+                }
+
+            }
+        }
+    }
+
+    button.ready {
+        display: block;
+        width: 250px;
+        height: 100px;
+        margin: 0 auto;
+        cursor: pointer;
+        border-radius: 20px;
+        font-size: 26px;
+        font-weight: bold;
+        border: 2px solid var(--border-color);
+        background-color: transparent;
+        color: var(--first-color);
+        transition: all .15s linear;
+        box-shadow: 5px 5px 10px transparent;
+    }
+
+    button.ready:hover,
+    button.ready:active {
+        box-shadow: 5px 5px 10px var(--second-color);
+    }
+
+    p.res {
+        font-size: 44px;
+        margin-top: 10%;
+        font-weight: bold;
+        letter-spacing: 8px;
+
+        span.numRes {
+            color: var(--first-color)
+        }
+    }
+
+    p.good {
+        color: var(--second-color);
+    }
+
+    p.bad {
+        color: #B22222;
+        font-size: 30px;
+        margin-top: 3%;
+        cursor: pointer;
+    }
+
+    div.clue {
+        width: calc(100% - 300px);
+        height: 30px;
+        position: absolute;
+        bottom: 10%;
+        right: -15%;
+
+        p.paragraphClue {
+            color: #B22222;
+            font-weight: bold;
+            text-align: center;
+            word-spacing: 3px;
+
+            em {
+                color: var(--first-color);
+            }  
+        }
+    }
+    p.decisionProcess {
+        font-size: 28px;
+        word-spacing: normal;
+        letter-spacing: 7px;
+        color: var(--first-color);
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    p.whitespaceCoef {
+        word-spacing: 50px;
+    }
+
+    
+    div.expressionExample, div.expression {
+        color: var(--first-color);
+        align-items: stretch;
+        font-size: 36px;
+        gap: 5px;
+        margin-top: 30px;
+        font-weight: bold;
+
+        span.equal {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+
+            sub {
+                position: relative;
+                top: 7.5px;
+                vertical-align: sub;
+            }
+        }
+
+        div.fraction {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+
+            span {
+                display: block;
+                letter-spacing: 4px;
+            }
+
+            span.numerator {
+                font-size: 28px;
+                padding-bottom: 2.5px;
+            }
+            span.line {
+                width: 100%;
+                border-top: 2px solid var(--first-color);
+                margin-top: 2.5px;
+            }
+            span.denominator {
+                font-size: 28px;
+                padding-top: 2.5px;
+            }
+        }
+    }
+    div.expression {
+        display: inline-flex;
+    }
+}
+
+@keyframes starHover {
+    0% {
+        stroke: var(--second-color);
+        transform: scale(1);
+    }
+
+    33% {
+        stroke: var(--border-color);
+    }
+
+    66% {
+        stroke: var(--first-color);
+    }
+
+    100% {
+        stroke: violet;
+        transform: scale(1.35);
+    }
+}
+
+@keyframes starActive {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes infoDivShow {
+    0% {
+        border-color: transparent;
+        border-radius: 0;
+    }
+    100% {
+        border-color: var(--border-color);
+        border-radius: 20px;
+    }
+}
+
+@keyframes infoSpanShow {
+    0% {
+        color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        color: var(--second-color);
+    }
+}
+@keyframes infoEmShow {
+    0% {
+        color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        color: var(--first-color);
+    }
+}

@@ -1,0 +1,85 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>The quadratic equation</title>
+    </head>
+    <body>
+        <div class="choice">
+            <div class="top">
+            <div class="option">
+                <svg id="first" class="standart star active" width="75" height="75" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8"
+                        style="fill:#C0C0C0;" />
+            </div>
+            <div class="option">
+                <svg id="second" class="gold star" width="75" height="75" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8"
+                        style="fill:#FFD700;" />
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="input">
+                
+            </div>
+        </div>
+    </div>
+        <h1>
+            Алгоритм для решения квадратного уравнения
+        </h1>
+        <h4 class="example">
+            ax<sup>2</sup> + bx + c = 0
+        </h4>
+        <section class="coefficients">
+            <div class="coefficient">
+                <h2>
+                    Коэффициент a:
+                </h2>
+                <div class="descript">
+                    <h2>
+                        X<sup>2</sup>
+                    </h2>
+                    <label for="a">Запишите значение коэффициента ниже:</label>
+                    <br>
+                    <input type="number" id="a" name="a" placeholder="0" value="2">
+                </div>
+            </div>
+            <div class="coefficient">
+                <h2>
+                    Коэффициент b:
+                </h2>
+                <div class="descript">
+                    <h2>
+                        X
+                    </h2>
+                    <label for="b">Запишите значение коэффициента ниже:</label>
+                    <br>
+                    <input type="number" id="b" name="b" placeholder="0" value="8">
+                </div>
+            </div>
+            </div>
+            <div class="coefficient">
+                <h2>
+                    Коэффициент c:
+                </h2>
+                <div class="descript">
+                    <h2>
+                        Свободный член
+                    </h2>
+                    <label for="c">Запишите значение коэффициента ниже:</label>
+                    <br>
+                    <input type="number" id="c" name="c" placeholder="0" value="6">
+                </div>
+            </div>
+            </div>
+        </section>
+        <button class="ready">
+            Посчитать
+        </button>
+        <script src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+        <script src="texw.js"></script>
+    </body>
+    </html>
