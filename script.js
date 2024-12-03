@@ -200,17 +200,28 @@ btnRes.addEventListener('click', function () {
       pD.classList.add('decisionProcess')
       divExer.appendChild(pD);
       console.log(coefB);
-      pD.innerHTML = ` D = b<sup>2</sup> - 4ac = ${coefB.value}<sup>2</sup> - 4 * ${ coefA.value} * ${coefC.value} = ${D}`;
+      pD.innerHTML = ` D = b<sup>2</sup> - 4ac = ${coefB.value}<sup>2</sup> - 4 * ${ coefA.value} * ${coefC.value} = ${coefB.value ** 2} - ${4 * coefA.value * coefC.value} = ${D}`;
       let pRes = document.createElement('p');
       pRes.classList.add('decisionProcess');
       divExer.appendChild(pRes);
       pRes.innerHTML = `D > 0, два корня`;
 
       expresExample( `flex`, `0 15px 0 0`, `X = `, `-b ± √D`, `block`, `2a`);
+
       expresExample( `inline-flex`, `0 15px 0 0`, `X<sub>1</sub> = `, `${coefB.value * -1} + √${D}`, `block`, `2*${coefA.value}`);
       expresExample( `inline-flex`, `0 15px`, "=", `${coefB.value * -1} + ${Math.sqrt(D)}`, `block`, `${2 * coefA.value}`);
       expresExample( `inline-flex`, `0 15px`, "=", `${coefB.value * -1 + Math.sqrt(D)}`, `block`, `${2 * coefA.value}`);
       expresExample( `inline-flex`, `0 15px`, "=", `${(coefB.value * -1 + Math.sqrt(D)) / (2 * coefA.value)}`, `none`, ``);
+
+      let Or = document.createElement('p');
+      Or.innerHTML = `ИЛИ`;
+      Or.classList.add('OR');
+      document.body.appendChild(Or);
+
+      expresExample( `inline-flex`, `0 15px 0 0`, `X<sub>2</sub> = `, `${coefB.value * -1} - √${D}`, `block`, `2*${coefA.value}`);
+      expresExample( `inline-flex`, `0 15px`, "=", `${coefB.value * -1} - ${Math.sqrt(D)}`, `block`, `${2 * coefA.value}`);
+      expresExample( `inline-flex`, `0 15px`, "=", `${coefB.value * -1 - Math.sqrt(D)}`, `block`, `${2 * coefA.value}`);
+      expresExample( `inline-flex`, `0 15px`, "=", `${(coefB.value * -1 - Math.sqrt(D)) / (2 * coefA.value)}`, `none`, ``);
     }
       break;
     case (D === 0):

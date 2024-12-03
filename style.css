@@ -294,6 +294,13 @@ body {
     div.expression {
         display: inline-flex;
     }
+    p.OR {
+        color: var(--first-color);
+        margin-top: 35px;
+        letter-spacing: 6.5px;
+        font-weight: bold;
+        font-size: 34px;
+    }
 }
 
 @keyframes starHover {
